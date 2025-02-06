@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS Skeleton</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MainController">
+      <table border="1">
+        <thead>
+          <th>nama</th>
+          <th>alamat</th>
+          <th>link</th>
+          <th>edit</th>
+          <th>delete</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="person in persons">
+            <td>{{ person.nama }}</td>
+            <td>{{ person.alamat }}</td>
+            <td>
+              <a href="{{ person.link }}" target="_blank">{{person.nama}}</a>
+            </td>
+            <td><button>Edit</button></td>
+            <td><button>Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('MainController', function ($scope) {
+        $scope.persons = [
+          {
+            id: 1,
+            nama: 'John Doe',
+            alamat: '123 Main St',
+            link: 'https://www.linkedin.com/in/johndoe',
+          },
+          {
+            id: 2,
+            nama: 'Jane Smith',
+            alamat: '456 Elm St',
+            link: 'https://www.linkedin.com/in/janesmith',
+          },
+          {
+            id: 3,
+            nama: 'Michael Johnson',
+            alamat: '789 Oak St',
+            link: 'https://www.linkedin.com/in/michaeljohnson',
+          },
+          {
+            id: 4,
+            nama: 'Emily Davis',
+            alamat: '101 Pine St',
+            link: 'https://www.linkedin.com/in/emilydavis',
+          },
+          {
+            id: 5,
+            nama: 'William Brown',
+            alamat: '202 Maple St',
+            link: 'https://www.linkedin.com/in/williambrown',
+          },
+          {
+            id: 6,
+            nama: 'Jessica Wilson',
+            alamat: '303 Cedar St',
+            link: 'https://www.linkedin.com/in/jessicawilson',
+          },
+          {
+            id: 7,
+            nama: 'David Martinez',
+            alamat: '404 Birch St',
+            link: 'https://www.linkedin.com/in/davidmartinez',
+          },
+          {
+            id: 8,
+            nama: 'Sarah Lee',
+            alamat: '505 Walnut St',
+            link: 'https://www.linkedin.com/in/sarahlee',
+          },
+          {
+            id: 9,
+            nama: 'Daniel Harris',
+            alamat: '606 Chestnut St',
+            link: 'https://www.linkedin.com/in/danielharris',
+          },
+          {
+            id: 10,
+            nama: 'Laura Clark',
+            alamat: '707 Spruce St',
+            link: 'https://www.linkedin.com/in/lauraclark',
+          },
+        ];
+      });
+    </script>
+  </body>
+</html>
